@@ -191,7 +191,7 @@ module Danger
       added_line_numbers = []
       diff_lines = diff.strip.split("\n")
       diff_lines.each_with_index do |line, index|
-        if m == /\+(\d+)(?:,\d+)? @@/.match(line)
+        if m = /\+(\d+)(?:,\d+)? @@/.match(line)
           # (e.g. @@ -32,10 +32,7 @@)
           current_line_number = Integer(m[1])
         else
